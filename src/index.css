@@ -1,13 +1,15 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --brand-primary: #0768AC;
+  --brand-secondary: #03C180;
+  --bg-default: #FFFFFF;
+  --bg-body: #F0F9FF;
+  --lines-color: #DDDDDD;
+  --body-text: #333333;
+  --heart-color: #DC143C;
+  --star-color: #E49A16;
+  --card-author-color: #848484;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  display: block;
+  font-family: 'Nunito Sans', sans-serif;
 }
