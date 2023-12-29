@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
 :root{
   --brand-primary: #0768AC;
   --brand-secondary: #03C180;
@@ -8,8 +15,9 @@
   --heart-color: #DC143C;
   --star-color: #E49A16;
   --card-author-color: #848484;
+
 }
-body {
-  display: block;
-  font-family: 'Nunito Sans', sans-serif;
+
+body{
+  background-color: var(--bg-body);
 }
