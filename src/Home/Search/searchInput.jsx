@@ -5,14 +5,20 @@ import { searchOutline } from 'ionicons/icons';
 
 
 const SearchBox = styled.div`
-    width: 70%;
-    border-right: var(--lines-color);
+
+    width: 100%;
+
     display: flex;
     align-items: center;
     gap: 15px;
     padding-left: 10px;
     color: var(--lines-color);
     height: 50%;
+
+    @media(min-width: 768px){
+        width: 70%;
+    }
+    
 `
 
 const StyledInput = styled.input`
@@ -21,6 +27,7 @@ const StyledInput = styled.input`
     height: 100%;
     font-size: 18px;
     width: 100%;
+    transition: none;
 `
 const StyledIcon = styled(IonIcon)`
     color: var(--body-text);
