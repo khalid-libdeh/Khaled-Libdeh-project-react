@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import SearchInput from "./searchInput";
+import Container from "../../Containers/container";
 
-const StyledSearchBar = styled.div`
+const StyledSearchBar = styled(Container)`
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 5px var(--lines-color);

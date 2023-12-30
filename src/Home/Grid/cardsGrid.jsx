@@ -15,14 +15,14 @@ const Grid = styled.div`
 const CardsGrid = ({ topics }) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
     return (
-        <Container>
+       
             <Grid>
                 {topics?.map(topic => (
                     <Card key={topic.id} imgPath={path + topic.image} title={topic.topic} category={topic.category} author={topic.name} rating ={topic.rating}/>
                 ))}
 
             </Grid >
-        </Container>
+        
 
     )
 }

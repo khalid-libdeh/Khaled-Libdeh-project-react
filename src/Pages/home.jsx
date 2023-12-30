@@ -3,6 +3,7 @@ import CardsGrid from "../Home/Grid/cardsGrid";
 import { fetchTopics, BACKEND_API } from "../Scripts/api";
 import SearchInput from "../Home/Search/searchInput";
 import SearchBar from "../Home/Search/searchBar";
+import Container from "../Containers/container";
 
 function Home() {
 
@@ -21,8 +22,10 @@ function Home() {
 
     return (
         <div>
+            <Container>
             <SearchBar/>
             <CardsGrid topics = {topics}/>
+            </Container>
         </div>
     )
 }
