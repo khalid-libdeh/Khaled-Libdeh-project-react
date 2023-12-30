@@ -3,6 +3,8 @@ import Button from "./Components/button";
 import { IonIcon } from '@ionic/react';
 import { moonOutline, heartOutline } from 'ionicons/icons';
 import Container from "../Containers/container";
+import Welcome from "./Components/welcome";
+
 
 const FlexHeader = styled(Container)`
     display: flex;
@@ -36,6 +38,7 @@ const Header = ({ title, titleColor }) => {
                     </Button>
                 </ButtonsCont>
             </FlexHeader>
+            <Welcome/>
         </StyledHeader>
     )
 }

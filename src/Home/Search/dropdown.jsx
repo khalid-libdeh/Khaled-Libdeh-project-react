@@ -4,6 +4,7 @@ import styled from "styled-components";
 const ListBy = styled.span`
     font-size: 12px;
     padding-left: 4px;
+
 `
 const StyledDrop = styled.div`
     display: flex;
@@ -27,9 +28,11 @@ const StyledDrop = styled.div`
 `
 
 const StyledSelect = styled.select`
-    border: 0 !important; ;
+    border: 0 !important; 
     outline: none !important; ;
     box-shadow: inset 0 0 0 5px #fff !important; 
+    font-weight: 700;
+    font-size: 14px;
 
 `
 
