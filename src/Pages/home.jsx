@@ -37,10 +37,14 @@ function Home() {
     useEffect(() =>{
         console.log(filter)
     },[filter])
+
+    useEffect(() =>{
+        console.log(sort)
+    },[sort])
     return (
         <div>
             <MainContainer>
-                <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal} updateFilter={setFilter}/>
+                <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal} updateSort={setSort} updateFilter={setFilter}/>
                 {loading ? <Loading/> : <CardsGrid topics={topics}/>}
          
             </MainContainer>
