@@ -33,19 +33,23 @@ const DropDiv = styled.div`
 
 
 
-const SearchBar = ({ sortOptions, filterOptions, updateSearchVal }) => {
+const SearchBar = ({ sortOptions, filterOptions, updateSearchVal, updateFilter }) => {
 
-    const sendSearchValToHome = (value)=>{
+    const sendSearchValToHome = (value) => {
         updateSearchVal(value)
-      }
+    }
+
+    const sendFilterToHome = (value) => {
+        updateFilter(value)
+    }
 
     return (
         <StyledSearchBar>
 
-            <SearchInput input="Search the website..." sendToSearchBar ={sendSearchValToHome.bind(this)}/>
+            <SearchInput input="Search the website..." sendToSearchBar={sendSearchValToHome.bind(this)} />
             <DropDiv>
-                <DropDown title="Sort by" options={sortOptions} />
-                <DropDown title="Filter by" options={filterOptions} />
+                <DropDown title="Sort by" options={sortOptions}/>
+                <DropDown title="Filter by" options={filterOptions} sendFilterToSearchBar={sendFilterToHome.bind(this)} />
             </DropDiv>
         </StyledSearchBar>
     )

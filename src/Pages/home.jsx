@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CardsGrid from "../Home/Grid/cardsGrid";
+import Loading from "../Components/Loading";
 import { fetchTopics, BACKEND_API } from "../Scripts/api";
 import SearchInput from "../Home/Search/searchInput";
 import SearchBar from "../Home/Search/searchBar";
@@ -17,6 +18,8 @@ function Home() {
     const [topics, setTopics] = useState(null)
     const [loading, setLoading] = useState(false)
     const [searchVal, setSearchVal] = useState('');
+    const [sort, setSort] = useState('default')
+    const [filter, setFilter] = useState(null)
     
     useEffect(() => {
         setLoading(true)
@@ -28,15 +31,18 @@ function Home() {
             console.log(err)
             setLoading(false)
         })
-        console.log(topics)
-        console.log(searchVal)
     }, [searchVal]);
 
+
+    useEffect(() =>{
+        console.log(filter)
+    },[filter])
     return (
         <div>
             <MainContainer>
-                <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal}/>
-                <CardsGrid topics={topics}/>
+                <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal} updateFilter={setFilter}/>
+                {loading ? <Loading/> : <CardsGrid topics={topics}/>}
+         
             </MainContainer>
         </div>
     )

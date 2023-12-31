@@ -36,12 +36,18 @@ const StyledSelect = styled.select`
 
 `
 
-const DropDown = ({ title, options }) => {
+const DropDown = ({ title, options, sendFilterToSearchBar }) => {
+
+    const handleChange = (event) => {
+        if (event.target.title = "Filter by")
+            sendFilterToSearchBar(event.target.value)
+    }
+
     return (
         <StyledDrop>
             <ListBy>{title}:</ListBy>
-            <StyledSelect>
-                {options.map(option =>(
+            <StyledSelect onChange={handleChange}>
+                {options?.map(option => (
                     <option key={option} value={option}>{option}</option>
                 ))}
             </StyledSelect>
