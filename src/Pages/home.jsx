@@ -6,6 +6,8 @@ import SearchInput from "../Home/Search/searchInput";
 import SearchBar from "../Home/Search/searchBar";
 import Container from "../Containers/container";
 import styled from "styled-components";
+import { sortArrayByString, sortTopics } from "../Scripts/sort";
+
 
 const MainContainer = styled(Container)`
     padding-top: 18px;
@@ -37,19 +39,15 @@ function Home() {
 
     useEffect(() => {
         if (filter === "Default")
-            setFilteredTopics(topics)
+            setFilteredTopics(sortTopics(topics,sort))
         else
             setFilteredTopics(
-                topics?.filter((el) => {
+                sortTopics(topics,sort)?.filter((el) => {
                     return (el.category === filter)
                 })
             )
-        console.log(filteredTopics)
-    }, [filter, topics])
+    }, [filter,topics,sort])
 
-    useEffect(() => {
-        console.log(sort)
-    }, [sort])
     return (
         <div>
             <MainContainer>
