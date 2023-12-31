@@ -22,7 +22,7 @@ const WelcomeText = styled.div`
     margin-top: 20px;
 `
 
-const Heading = styled.h3`
+const Heading = styled.h2`
     font-weight: 700;
     color: var(--brand-secondary)
 `

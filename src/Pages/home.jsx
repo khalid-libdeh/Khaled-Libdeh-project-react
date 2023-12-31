@@ -9,30 +9,39 @@ import styled from "styled-components";
 const MainContainer = styled(Container)`
     padding-top: 18px;
 `
-let sortOptions = ["Default", ""]
-let filterOptions = ["Default", ""]
+let sortOptions = ["Default", "Topic Title","Author Name"]
+let filterOptions = ["Default", "Web Development Languages", "Frontend Frameworks and Libraries","Backend Frameworks and Libraries","Databases and APIs","Web Development Concepts and Technologies"]
 
 function Home() {
 
     const [topics, setTopics] = useState(null)
+    const [loading, setLoading] = useState(false)
     const [searchVal, setSearchVal] = useState('');
-
+    
+    const handleSearch = (val) =>{ 
+        setSearchVal(val)
+    }
 
     useEffect(() => {
         fetchTopics(searchVal).then((data) => {
-            if (data.status === 404)
+            setLoading(true)
+            if (data.status === 404){
                 setTopics([])
+            }
+                
             else
                 setTopics(data)
+
+            setLoading(false)
         })
 
-    }, [searchVal]);
+    }, [searchVal,loading]);
 
     return (
         <div>
             <MainContainer>
                 <SearchBar sortOptions={sortOptions} filterOptions={filterOptions}/>
-                <CardsGrid topics={topics} />
+                <CardsGrid topics={topics} loading={loading} updateSearch={handleSearch}/>
             </MainContainer>
         </div>
     )

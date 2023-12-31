@@ -11,12 +11,13 @@ const Grid = styled.div`
     margin-top: 30px;
     
 `
-
-const CardsGrid = ({ topics }) => {
+const Loading = styled
+const CardsGrid = ({ topics, loading }) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
     return (
        
             <Grid>
+
                 {topics?.map(topic => (
                     <Card key={topic.id} imgPath={path + topic.image} title={topic.topic} category={topic.category} author={topic.name} rating ={topic.rating}/>
                 ))}
