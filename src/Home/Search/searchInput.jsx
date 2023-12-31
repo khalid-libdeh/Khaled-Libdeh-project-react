@@ -7,6 +7,7 @@ import { searchOutline } from 'ionicons/icons';
 const SearchBox = styled.div`
 
     width: 100%;
+    
     display: flex;
     align-items: center;
     gap: 15px;
@@ -32,20 +33,19 @@ const StyledIcon = styled(IonIcon)`
     color: var(--body-text);
 `
 
-const SearchInput = ({ input, updateSearch }) => {
+const SearchInput = ({input, sendToSearchBar}) => {
     let debounceTimeout
-
     const handleInput = (event) => {
         clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(() => {
-            updateSearch(event.target.value)
+        debounceTimeout = setTimeout(()=>{
+            sendToSearchBar(event.target.value)
         }, 300)
-
+        
     }
 
     return (
         <SearchBox>
-            <StyledIcon icon={searchOutline} />
+            <StyledIcon icon={searchOutline}/>
             <StyledInput type="text" placeholder={input} onInput={handleInput}/>
         </SearchBox>
     )
