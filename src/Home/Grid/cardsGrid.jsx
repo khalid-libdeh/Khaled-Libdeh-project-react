@@ -12,12 +12,11 @@ const Grid = styled.div`
     
 `
 const Loading = styled
-const CardsGrid = ({ topics, loading }) => {
+const CardsGrid = ({ topics}) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
     return (
        
             <Grid>
-
                 {topics?.map(topic => (
                     <Card key={topic.id} imgPath={path + topic.image} title={topic.topic} category={topic.category} author={topic.name} rating ={topic.rating}/>
                 ))}

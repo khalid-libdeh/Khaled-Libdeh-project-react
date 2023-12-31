@@ -18,28 +18,25 @@ function Home() {
     const [loading, setLoading] = useState(false)
     const [searchVal, setSearchVal] = useState('');
     
-
-
     useEffect(() => {
-        fetchTopics(searchVal).then((data) => {
-     
-            if (data.status === 404){
-                setTopics([])
-            }
-                
-            else
-                setTopics(data)
-
- 
+        setLoading(true)
+        fetchTopics(searchVal).then((res) => {
+            setTopics(res.data)
+            setLoading(false)
+            
+        }).catch(err => {
+            console.log(err)
+            setLoading(false)
         })
-
-    }, [searchVal,loading]);
+        console.log(topics)
+        console.log(searchVal)
+    }, [searchVal]);
 
     return (
         <div>
             <MainContainer>
                 <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal}/>
-                <CardsGrid topics={topics} loading={loading}/>
+                <CardsGrid topics={topics}/>
             </MainContainer>
         </div>
     )
