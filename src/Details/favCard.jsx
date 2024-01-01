@@ -47,8 +47,10 @@ const FavBoxTop = styled.span`
     display: flex;
     align-items: end;
     align-self: baseline;
+    width: 3rem;
     height: 30%;
-    width: 100%;
+    text-align: center;
+ 
 `
 
 const FavCard = ({ title, imgPath, author }) => {

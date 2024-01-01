@@ -16,12 +16,8 @@ const MainContainer = styled.main`
 `
 
 
-<<<<<<< HEAD
 
 const Details = ({}) => {
-=======
-const Details = () => {
->>>>>>> 73d2415eb3472e2eb8fe76d1923db9cc4dd62b5c
     let { id } = useParams();
     const path = process.env.PUBLIC_URL + "/Logos/"
     const [topic, setTopic] = useState(null)
@@ -32,13 +28,8 @@ const Details = () => {
         }).catch(err => {
             console.log(err)
         })
-<<<<<<< HEAD
       
     },[])
-=======
-
-    }, [])
->>>>>>> 73d2415eb3472e2eb8fe76d1923db9cc4dd62b5c
 
     return (
         <>
