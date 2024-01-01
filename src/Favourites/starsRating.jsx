@@ -30,7 +30,7 @@ const RatingStars = styled.div`
     align-items: center;
     position: relative;
     width: 6rem;
-    padding-top: 30px;
+    
 `
 
 const StarPair = styled.div`

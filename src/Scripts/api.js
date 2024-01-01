@@ -16,5 +16,5 @@ export async function fetchTopics(topicName) {
 
 export async function fetchTopic(id){
     const url = new URL(BACKEND_API_DETAILS + id)
-    return axios.return(url)
+    return axios.get(url)
 }

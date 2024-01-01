@@ -1,15 +1,27 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"
+import { fetchTopic } from "../Scripts/api";
+import Description from "../Details/description";
 
-
-
-const queryParameters = new URLSearchParams(window.location.search)
-const id = queryParameters.get("id")
 
 const Details = ({}) => {
+    let { id } = useParams();
 
+    const [topic, setTopic] = useState(null)
+
+    useEffect(()=>{
+        fetchTopic(id).then(res =>{
+            setTopic(res.data)
+        }).catch(err => {
+            console.log(err)
+        })
+        console.log(topic)
+    },[])
 
     return (
         <>
-        ggggggggggg{id}
+        {topic ? <Description topic ={topic}/>: ""}
+        
         </>        
     )
 }

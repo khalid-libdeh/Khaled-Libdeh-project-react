@@ -5,7 +5,7 @@ const StyledDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 120px;
+    height: 115px;
     width: 100%;
     background-image:
         /* Top Left triangle*/
@@ -23,7 +23,8 @@ const WelcomeText = styled.div`
 `
 
 const Heading = styled.h2`
-    font-weight: 700;
+    font-weight: bolder;
+    font-size: 20px;
     color: var(--brand-secondary)
 `
 

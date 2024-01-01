@@ -45,7 +45,6 @@ const Tilte = styled.h4`
 
 const Author = styled.span`
     font-weight: 400;
-    margin-top: 15px;
     color: var(--card-author-color);
 `
 
@@ -55,7 +54,12 @@ const Category = styled.span`
     -webkit-box-orient: vertical;     
     overflow: hidden; 
 `
-
+const Padding = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 15px;
+`
 let Card = ({ imgPath, category, title, rating, author }) => {
 
     return (
@@ -66,8 +70,10 @@ let Card = ({ imgPath, category, title, rating, author }) => {
             <CardInfo>
                 <Category>{category}</Category>
                 <Tilte>{title}</Tilte>
-                <FiveStarsRating value={rating}/>
+                <Padding>
+                <FiveStarsRating value={rating} />
                 <Author>Author: {author}</Author>
+                </Padding>
             </CardInfo>
 
         </StyledCard>
