@@ -4,6 +4,7 @@ import { fetchTopic } from "../Scripts/api";
 import Description from "../Details/description";
 
 
+
 const Details = ({}) => {
     let { id } = useParams();
 
@@ -15,7 +16,7 @@ const Details = ({}) => {
         }).catch(err => {
             console.log(err)
         })
-        console.log(topic)
+      
     },[])
 
     return (
