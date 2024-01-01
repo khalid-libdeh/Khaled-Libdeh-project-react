@@ -39,21 +39,20 @@ function Home() {
 
     useEffect(() => {
         if (filter === "Default")
-            setFilteredTopics(sortTopics(topics,sort))
+            setFilteredTopics(sortTopics(topics, sort))
         else
             setFilteredTopics(
-                sortTopics(topics,sort)?.filter((el) => {
+                sortTopics(topics, sort)?.filter((el) => {
                     return (el.category === filter)
                 })
             )
-    }, [filter,topics,sort])
+    }, [filter, topics, sort])
 
     return (
         <div>
             <MainContainer>
                 <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal} updateSort={setSort} updateFilter={setFilter} />
                 {loading ? <Loading /> : <CardsGrid topics={filteredTopics} />}
-
             </MainContainer>
         </div>
     )
