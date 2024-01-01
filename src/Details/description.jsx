@@ -1,18 +1,8 @@
 import styled from "styled-components";
 import FiveStarsRating from "../Favourites/starsRating";
 
-const StyledDescription = styled.div`
-    width: 100%;
-    background-color: var(--body-text);
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    color: var(--brand-secondary);
-    padding-inline: 17.4rem;
-    padding-block: 30px;
-`
 const Details = styled.div`
-    width: 62%;
+    width: 60.5%;
 `
 const Title = styled.h2`
     color: var(--bg-default);
@@ -32,14 +22,12 @@ const DetailsText = styled.div`
 
 const Description = ({ topic }) => {
     return (
-        <StyledDescription>
-            <Details>
+        <Details>
             <span>{topic.category} </span>
             <Title>{topic.topic}</Title>
             <Rating value={topic.rating} />
             <DetailsText>{topic.description}</DetailsText>
-            </Details>
-        </StyledDescription>
+        </Details>
     )
 }
 
