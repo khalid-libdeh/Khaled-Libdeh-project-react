@@ -12,18 +12,23 @@ const StyledButton = styled.button`
     width: 100%;
     color: var(--bg-default);
     gap: 10px;
-    height: 50px;
-    font-size: 17px;
+    height: 55px;
+    font-size: 21px;
     margin-block: 10px;
     cursor: pointer;
 `
+const StyledIcon = styled(IonIcon)`
+    height: 25rem;
+    width: 2rem;
+`
 
-const ButtonGreen = () => {
+const ButtonFav= () => {
     return (
         <StyledButton>
-            
+            Add to Favourites
+            <StyledIcon icon={heartOutline}/>
         </StyledButton>
     )
 }
 
-export default ButtonGreen
+export default ButtonFav

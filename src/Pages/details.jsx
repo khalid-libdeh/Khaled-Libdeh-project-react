@@ -15,8 +15,6 @@ const MainContainer = styled.main`
     width: 100%;
 `
 
-
-
 const Details = ({}) => {
     let { id } = useParams();
     const path = process.env.PUBLIC_URL + "/Logos/"

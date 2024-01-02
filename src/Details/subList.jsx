@@ -6,20 +6,26 @@ import { sortTopics } from "../Scripts/sort";
 const SubListContainer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: flex-start;
     position: relative;
     z-index: 1;
-    padding-inline: 17.4rem;
     padding-top: 30px;
+    padding-inline: 5%;
+    @media (min-width: 1024px)
+    {
+            
+            padding-inline: 17.4rem;
+    }
 `
 const SubListDiv = styled.div`
     height: auto;
+    width: 100%;
     color: var(--body-text);
     border: solid 1px var(--lines-color) !important;
     align-self: flex-start;
-    width: 100%;
 
-    @media (min-width: 768px)
+    @media (min-width: 1024px)
     {
             width: 60.5%;
     }

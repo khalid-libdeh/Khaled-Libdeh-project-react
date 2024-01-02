@@ -2,12 +2,21 @@ import styled from "styled-components";
 
 const StyledDetails = styled.div`
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
     background-color: var(--body-text);
     height: auto;
     color: var(--brand-secondary);
-    padding-inline: 17.4rem;
     padding-block: 30px;
-    position: relative;
+    background-color: var(--body-text);
+    height: auto;
+    padding-inline: 5%;
+    @media (min-width: 768px)
+    {
+        position: relative;
+        padding-inline: 17.4rem;
+        align-items: start;
+    }
 `
 export default StyledDetails

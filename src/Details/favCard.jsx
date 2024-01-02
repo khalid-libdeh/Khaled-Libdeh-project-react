@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import ButtonFav from "./buttonFav";
 
 const StyledCard = styled.div`
     box-shadow: 0 0 5px var(--lines-color);
@@ -17,7 +18,7 @@ const StyledCard = styled.div`
 `
 const CardImgCont = styled.div`
     width: 100%;
-    height: 12.8rem;
+    height: 12.7rem;
     overflow: hidden;
 `
 
@@ -37,22 +38,28 @@ const CardTitle = styled.span`
 `
 const FavBox = styled.div`
     border: solid 1px var(--lines-color);
-    margin-bottom: 3%;
+    margin-bottom: 6%;
     display: flex;
     flex-direction: column;
-    height: 130px;
+    height: 140px;
     margin-inline: 15px;
+    padding-inline: 22px;
 `
 const FavBoxTop = styled.span`
     display: flex;
     align-items: end;
     align-self: baseline;
-    width: 3rem;
     height: 30%;
     text-align: center;
- 
+    font-weight: 700;
 `
-
+const FavBoxBottom = styled.span`
+    align-self: center;
+    vertical-align: middle;
+    font-size: 13px;
+    height: 30px;
+    color: var(--lines-color);
+`
 const FavCard = ({ title, imgPath, author }) => {
 
     return (
@@ -67,6 +74,8 @@ const FavCard = ({ title, imgPath, author }) => {
             </CardText>
             <FavBox>
                 <FavBoxTop>Interested about this topic?</FavBoxTop>
+                <ButtonFav/>
+                <FavBoxBottom>Unlimted Credits</FavBoxBottom>
             </FavBox>
         </StyledCard>
     )

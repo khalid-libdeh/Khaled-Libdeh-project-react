@@ -27,18 +27,23 @@ const StyledHeader = styled.header`
     background-color: var(--bg-default);
 `
 
-const Header = ({ title, titleColor }) => {
+const Header = ({ title, titleColor, toggleFav }) => {
+
+    const toggle = () => {
+        toggleFav()
+    }
+
     return (
         <StyledHeader>
             <FlexHeader>
                 <Title style={{ color: titleColor }}>{title}</Title>
                 <ButtonsCont>
                     <Button icon={moonOutline} text="Dark Mode" />
-                    <Button icon={heartOutline} text="Favourites">
+                    <Button key="fav" onClick={toggle} icon={heartOutline} text="Favourites">
                     </Button>
                 </ButtonsCont>
             </FlexHeader>
-            <Welcome/>
+            <Welcome />
         </StyledHeader>
     )
 }

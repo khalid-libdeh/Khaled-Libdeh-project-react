@@ -2,7 +2,10 @@ import styled from "styled-components";
 import FiveStarsRating from "../Favourites/starsRating";
 
 const Details = styled.div`
-    width: 60.5%;
+    @media (min-width: 768px)
+    {
+        width: 60.5%;
+    }
 `
 const Title = styled.h2`
     color: var(--bg-default);
