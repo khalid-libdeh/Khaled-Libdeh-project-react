@@ -29,7 +29,7 @@ const Details = ({}) => {
             console.log(err)
         })
       
-    },[])
+    },[id])
 
     return (
         <>

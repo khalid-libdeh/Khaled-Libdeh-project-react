@@ -11,7 +11,7 @@ const Layout = () => {
     const [favourites, setFavourites] = useContext(FavContext)
     const [show, setShow] = useState(false)
     useEffect(() => {
-        console.log(favourites)
+
     }, [favourites])
     return (
         <div>

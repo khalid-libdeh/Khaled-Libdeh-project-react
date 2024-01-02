@@ -37,13 +37,17 @@ const Header = ({ title, titleColor }) => {
         setShow(!show)
     }
 
+    const toggleDark = () => {
+        console.log("dark")
+    }
+
     return (
         <StyledHeader>
             <FlexHeader>
                 <Title to={{pathname:"/"}} style={{ color: titleColor }}>{title}</Title>
                 <ButtonsCont>
-                    <Button icon={moonOutline} text="Dark Mode" />
-                    <Button key="fav" onClick icon={heartOutline} text="Favourites" hanleButtons={toggleFav}>
+                    <Button icon={moonOutline} text="Dark Mode" handleButtons={toggleDark}/>
+                    <Button key="fav" onClick icon={heartOutline} text="Favourites" handleButtons={toggleFav}>
                     </Button>
                 </ButtonsCont>
             </FlexHeader>

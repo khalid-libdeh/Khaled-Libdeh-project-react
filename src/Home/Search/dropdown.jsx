@@ -10,7 +10,7 @@ const StyledDrop = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2px;
-    width: 100%;
+    width: 50%;
     padding-inline: 10px;
     padding-block: 5px;
     background-color: transparent;
@@ -20,7 +20,6 @@ const StyledDrop = styled.div`
 
     @media(min-width: 768px) {
             border-left: solid 1px var(--lines-color);
-            width: 50%;
         
     }
     

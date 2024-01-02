@@ -2,7 +2,7 @@ import styled from "styled-components";
 import CardFlex from "./cardFlex";
 import FavouriteCard from "./favouriteCard";
 import { useContext, useState } from "react";
-
+import { Link } from "react-router-dom";
 
 const FavCont = styled.div`
     display: flex;
@@ -23,15 +23,17 @@ const Title = styled.span`
     font-size: 16px;
 `
 
-const FavContainer = ({favourites}) => {
+const FavContainer = ({ favourites }) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
 
-    return(
+    return (
         <FavCont>
             <Title>My Favourite Topics</Title>
             <CardFlex>
-                {favourites?.map(fav =>(
-                    <FavouriteCard key ={fav.topic} title={fav.topic} imgPath={path + fav.image} rating={fav.rating}/>
+                {favourites?.map(fav => (
+                    <Link key={fav.id} to={{ pathname: "/details/" + fav.id }}>
+                        <FavouriteCard key={fav.topic} title={fav.topic} imgPath={path + fav.image} rating={fav.rating} />
+                    </Link>
                 ))}
             </CardFlex>
         </FavCont>

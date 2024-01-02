@@ -29,10 +29,10 @@ const Text = styled.span`
 }
 `
 
-const Button = ({ icon, text, hanleButtons }) => {
+const Button = ({ icon, text, handleButtons }) => {
     
     const handleClick = () =>{
-        hanleButtons()
+        handleButtons()
     }
 
     return (
