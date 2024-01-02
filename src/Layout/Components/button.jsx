@@ -29,9 +29,14 @@ const Text = styled.span`
 }
 `
 
-const Button = ({ icon, text }) => {
+const Button = ({ icon, text, hanleButtons }) => {
+    
+    const handleClick = () =>{
+        hanleButtons()
+    }
+
     return (
-        <StyledButton>
+        <StyledButton onClick={handleClick}>
             <StyledIcon icon={icon} />
             <Text>{text}</Text>
         </StyledButton>

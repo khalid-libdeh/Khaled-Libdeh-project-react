@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { fetchTopic } from "../Scripts/api";
 import Description from "../Details/description";
@@ -7,6 +7,7 @@ import SubList from "../Details/subList";
 import DetailsContainer from "../Containers/detailsContainer";
 import FavCard from "../Details/favCard";
 import { Link } from "react-router-dom";
+import { FavContext } from "../Favourites/favourites";
 
 const MainContainer = styled.main`
     display: flex;
@@ -19,6 +20,7 @@ const Details = ({}) => {
     let { id } = useParams();
     const path = process.env.PUBLIC_URL + "/Logos/"
     const [topic, setTopic] = useState(null)
+    const [favourites, setFavourites] = useContext(FavContext)
 
     useEffect(() => {
         fetchTopic(id).then(res => {
@@ -37,7 +39,7 @@ const Details = ({}) => {
 
                         <DetailsContainer>
                             <Description topic={topic} />
-                            <FavCard title={topic.topic} author={topic.name} imgPath={path + topic.image}/>
+                            <FavCard topic={topic} imgPath={path + topic.image}/>
                         </DetailsContainer>
                         <SubList title={topic.topic} listItems={topic.subtopics} im/>
                     </MainContainer >

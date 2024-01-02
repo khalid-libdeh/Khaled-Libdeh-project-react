@@ -4,7 +4,9 @@ import { IonIcon } from '@ionic/react';
 import { moonOutline, heartOutline } from 'ionicons/icons';
 import Container from "../Containers/container";
 import Welcome from "./Components/welcome";
-
+import { useContext } from "react";
+import { ToggleFavContext } from "./layout";
+import { Link } from "react-router-dom";
 
 const FlexHeader = styled(Container)`
     display: flex;
@@ -20,26 +22,28 @@ const ButtonsCont = styled.div`
     gap: 6px;
 `
 
-const Title = styled.span`
+const Title = styled(Link)`
     font-weight: 700;
 `
 const StyledHeader = styled.header`
     background-color: var(--bg-default);
 `
 
-const Header = ({ title, titleColor, toggleFav }) => {
+const Header = ({ title, titleColor }) => {
 
-    const toggle = () => {
-        toggleFav()
+    const [show, setShow] = useContext(ToggleFavContext)
+
+    const toggleFav = () =>{
+        setShow(!show)
     }
 
     return (
         <StyledHeader>
             <FlexHeader>
-                <Title style={{ color: titleColor }}>{title}</Title>
+                <Title to={{pathname:"/"}} style={{ color: titleColor }}>{title}</Title>
                 <ButtonsCont>
                     <Button icon={moonOutline} text="Dark Mode" />
-                    <Button key="fav" onClick={toggle} icon={heartOutline} text="Favourites">
+                    <Button key="fav" onClick icon={heartOutline} text="Favourites" hanleButtons={toggleFav}>
                     </Button>
                 </ButtonsCont>
             </FlexHeader>

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import ButtonFav from "./buttonFav";
+import { useContext } from "react";
+
 
 const StyledCard = styled.div`
     box-shadow: 0 0 5px var(--lines-color);
@@ -60,7 +62,7 @@ const FavBoxBottom = styled.span`
     height: 30px;
     color: var(--lines-color);
 `
-const FavCard = ({ title, imgPath, author }) => {
+const FavCard = ({ topic, imgPath }) => {
 
     return (
         <StyledCard>
@@ -68,13 +70,13 @@ const FavCard = ({ title, imgPath, author }) => {
                 <CardImg src={imgPath} />
             </CardImgCont>
             <CardText>
-                <CardTitle>{title} </CardTitle>
+                <CardTitle>{topic.topic} </CardTitle>
                 by
-                <a href="#"> {author}</a>
+                <a href="#"> {topic.name}</a>
             </CardText>
             <FavBox>
                 <FavBoxTop>Interested about this topic?</FavBoxTop>
-                <ButtonFav/>
+                <ButtonFav topic={topic} />
                 <FavBoxBottom>Unlimted Credits</FavBoxBottom>
             </FavBox>
         </StyledCard>

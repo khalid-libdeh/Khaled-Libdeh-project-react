@@ -2,7 +2,7 @@ import styled from "styled-components";
 import FiveStarsRating from "./starsRating";
 const StyledCard = styled.div`
     width: 120px;
-    height: 100px;
+    height: 110px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     background-color: transparent;
     border-radius: 5px;
@@ -31,7 +31,7 @@ const Title = styled.h4`
     white-space: nowrap;
 `
 
-const FavouriteCard = ({ title, imgPath }) => {
+const FavouriteCard = ({ title, imgPath, rating }) => {
 
     return (
         <StyledCard>
@@ -39,8 +39,8 @@ const FavouriteCard = ({ title, imgPath }) => {
                 <StyledImage src={imgPath} />
             </StyledImageContainer>
             <Padding>
-                <Title>React</Title>
-                <FiveStarsRating value= {4.3}/>
+                <Title>{title}</Title>
+                <FiveStarsRating value= {rating}/>
             </Padding>
         </StyledCard>
     )

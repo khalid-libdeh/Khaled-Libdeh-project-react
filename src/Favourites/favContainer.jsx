@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import CardFlex from "./cardFlex";
 import FavouriteCard from "./favouriteCard";
+import { useContext, useState } from "react";
+
 
 const FavCont = styled.div`
     display: flex;
@@ -23,14 +25,13 @@ const Title = styled.span`
 
 const FavContainer = ({favourites}) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
+
     return(
         <FavCont>
             <Title>My Favourite Topics</Title>
             <CardFlex>
-            <FavouriteCard imgPath={path + "react.webp"}/>
-            <FavouriteCard imgPath={path + "react.webp"}/>
                 {favourites?.map(fav =>(
-                    <FavouriteCard imgPath={path + "html.png"}/>
+                    <FavouriteCard key ={fav.topic} title={fav.topic} imgPath={path + fav.image} rating={fav.rating}/>
                 ))}
             </CardFlex>
         </FavCont>
