@@ -12,7 +12,7 @@ import DarkModeProvider from "../Dark Mode/darkModeProvider";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter basename="/">
       <DarkModeProvider>
         <Favourites>
           <Routes>
@@ -23,7 +23,7 @@ function App() {
           </Routes>
         </Favourites>
       </DarkModeProvider>
-    </HashRouter >
+    </BrowserRouter >
   );
 }
 

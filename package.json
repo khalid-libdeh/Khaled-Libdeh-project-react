@@ -1,5 +1,6 @@
 {
-  "homepage": "https://ReactKhaled.github.io/",
+  "homepage": ".",
+  "name": "react-page",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
