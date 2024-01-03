@@ -13,6 +13,7 @@ const StyledImageContainer = styled.div`
     width: 100%;
     height: 18rem;
     overflow: hidden;
+    background-color: white;
 `;
 
 const StyledCard = styled.div`
@@ -20,7 +21,7 @@ const StyledCard = styled.div`
     flex-direction: column;
     height: 280px;
     background-color: var(--bg-default);
-    box-shadow: 0 0 2px var(--lines-color);
+    box-shadow: 0 0 5px var(--lines-color);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;

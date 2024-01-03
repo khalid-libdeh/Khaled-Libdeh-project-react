@@ -2,6 +2,8 @@ import { IonIcon } from "@ionic/react";
 import { checkmarkCircleOutline } from 'ionicons/icons';
 import styled from "styled-components";
 import { sortTopics } from "../Scripts/sort";
+import { DarkModeContext } from "../Dark Mode/darkModeProvider";
+import { useContext } from "react";
 
 const SubListContainer = styled.div`
     display: flex;
@@ -17,6 +19,10 @@ const SubListContainer = styled.div`
             
             padding-inline: 17.4rem;
     }
+    ${({ $dark }) => $dark && `
+    background-color: #282828;
+    color: var(--bg-body);
+`};
 `
 const SubListDiv = styled.div`
     height: auto;
@@ -29,6 +35,11 @@ const SubListDiv = styled.div`
     {
             width: 60.5%;
     }
+    ${({ $dark }) => $dark && `
+    background-color: #1A1A1A;
+    border: solid 1px black !important;
+    color: var(--bg-body);
+`};
 `
 
 
@@ -45,10 +56,17 @@ const SubListItem = styled.li`
     font-size: 16px;
     padding-left: 30px;
     width: 100%;
+    ${({ $dark }) => $dark && `
+    background-color: #1A1A1A;
+    border: solid 1px black !important;
+    color: var(--bg-body);
+`};
+ 
 `
 const SubListTitle = styled(SubListItem)`
     font-size: 25px;
     font-weight: 700;
+    
 `
 
 const IconCont = styled.div`
@@ -66,16 +84,15 @@ const CheckIcon = styled(IonIcon)`
 
 
 const SubList = ({ title, listItems }) => {
-
+    const {darkMode} = useContext(DarkModeContext)
     return (
-        <SubListContainer>
-
-            <SubListDiv>
-                <SubListTitle>
+        <SubListContainer $dark={darkMode}>
+            <SubListDiv $dark={darkMode}>
+                <SubListTitle $dark={darkMode}>
                     {title} Sub Topics
                 </SubListTitle>
                 {listItems?.map(item => (
-                    <SubListItem key={item}>
+                    <SubListItem key={item} $dark={darkMode}>
                         <IconCont>
                         <CheckIcon icon={checkmarkCircleOutline} />
                         </IconCont>

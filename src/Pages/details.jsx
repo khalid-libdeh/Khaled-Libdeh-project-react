@@ -8,12 +8,15 @@ import DetailsContainer from "../Containers/detailsContainer";
 import FavCard from "../Details/favCard";
 import { Link } from "react-router-dom";
 import { FavContext } from "../Favourites/favourites";
+import { DarkModeContext } from "../Dark Mode/darkModeProvider";
 
 const MainContainer = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    background-color: ${({ $dark }) => $dark ? `#282828` : `transparent`};
+
 `
 
 const Details = ({}) => {
@@ -21,6 +24,7 @@ const Details = ({}) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
     const [topic, setTopic] = useState(null)
     const [favourites, setFavourites] = useContext(FavContext)
+    const {darkMode} = useContext(DarkModeContext)
 
     useEffect(() => {
         fetchTopic(id).then(res => {
@@ -35,8 +39,7 @@ const Details = ({}) => {
         <>
             {
                 topic ? (
-                    <MainContainer>
-
+                    <MainContainer $dark ={darkMode}>
                         <DetailsContainer>
                             <Description topic={topic} />
                             <FavCard topic={topic} imgPath={path + topic.image}/>

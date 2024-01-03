@@ -11,7 +11,7 @@ const StyledCard = styled.div`
     border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
-    color: ${({ $dark }) => $dark ? `white` : `solid 1px black`};
+    color: ${({ $dark }) => $dark ? `white` : `black`};
 
 `
 const StyledImage = styled.img`
@@ -24,7 +24,7 @@ const StyledImageContainer = styled.div`
     width: 100%;
     height: 3.7rem;
     overflow: hidden;
-    background-color: ${({ $dark }) => $dark ? `white` : `transparent`};
+    background-color: white;
 `;
 
 const Padding = styled.div`
@@ -41,7 +41,7 @@ const FavouriteCard = ({ title, imgPath, rating }) => {
     const { darkMode } = useContext(DarkModeContext)
     return (
         <StyledCard $dark={darkMode}>
-            <StyledImageContainer $dark={darkMode}>
+            <StyledImageContainer>
                 <StyledImage src={imgPath} />
             </StyledImageContainer>
             <Padding>
