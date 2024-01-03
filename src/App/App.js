@@ -2,6 +2,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  HashRouter,
 } from "react-router-dom";
 import Home from '../Pages/home'
 import Details from "../Pages/details";
@@ -11,7 +12,7 @@ import DarkModeProvider from "../Dark Mode/darkModeProvider";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <DarkModeProvider>
         <Favourites>
           <Routes>
@@ -22,7 +23,7 @@ function App() {
           </Routes>
         </Favourites>
       </DarkModeProvider>
-    </BrowserRouter >
+    </HashRouter >
   );
 }
 
