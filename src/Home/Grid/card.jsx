@@ -1,5 +1,7 @@
 import styled from "styled-components"
 import FiveStarsRating from "../../Favourites/starsRating";
+import { DarkModeContext } from "../../Dark Mode/darkModeProvider";
+import { useContext } from "react";
 
 const StyledImage = styled.img`
     width: 100%;
@@ -22,6 +24,11 @@ const StyledCard = styled.div`
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    ${({ $dark }) => $dark && `
+    color: var(--bg-body);
+    background-color: #1A1A1A;
+    box-shadow: 0 0 5px black;
+`};
 
 `
 const CardInfo = styled.div`
@@ -61,9 +68,10 @@ const Padding = styled.div`
     gap: 15px;
 `
 let Card = ({ imgPath, category, title, rating, author }) => {
+    const { darkMode } = useContext(DarkModeContext)
 
     return (
-        <StyledCard>
+        <StyledCard $dark={darkMode}>
             <StyledImageContainer>
                 <StyledImage src={imgPath} />
             </StyledImageContainer>
@@ -71,8 +79,8 @@ let Card = ({ imgPath, category, title, rating, author }) => {
                 <Category>{category}</Category>
                 <Tilte>{title}</Tilte>
                 <Padding>
-                <FiveStarsRating value={rating} />
-                <Author>Author: {author}</Author>
+                    <FiveStarsRating value={rating} />
+                    <Author>Author: {author}</Author>
                 </Padding>
             </CardInfo>
 

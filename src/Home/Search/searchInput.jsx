@@ -2,12 +2,11 @@ import styled from "styled-components";
 import Container from "../../Containers/container";
 import { IonIcon } from "@ionic/react";
 import { searchOutline } from 'ionicons/icons';
-
+import { DarkModeContext } from "../../Dark Mode/darkModeProvider";
+import { useContext } from "react";
 
 const SearchBox = styled.div`
-
     width: 100%;
-    
     display: flex;
     align-items: center;
     gap: 15px;
@@ -28,12 +27,18 @@ const StyledInput = styled.input`
     font-size: 18px;
     width: 100%;
     transition: none;
+    ${({ $dark }) => $dark && `
+    color: var(--bg-body);
+    background-color: #1A1A1A;
+    border: 0;
+`};
 `
 const StyledIcon = styled(IonIcon)`
     color: var(--body-text);
 `
 
 const SearchInput = ({input, sendToSearchBar}) => {
+    const {darkMode} = useContext(DarkModeContext)
     let debounceTimeout
     const handleInput = (event) => {
         clearTimeout(debounceTimeout);
@@ -44,9 +49,9 @@ const SearchInput = ({input, sendToSearchBar}) => {
     }
 
     return (
-        <SearchBox>
+        <SearchBox >
             <StyledIcon icon={searchOutline}/>
-            <StyledInput type="text" placeholder={input} onInput={handleInput}/>
+            <StyledInput $dark={darkMode} type="text" placeholder={input} onInput={handleInput}/>
         </SearchBox>
     )
 }

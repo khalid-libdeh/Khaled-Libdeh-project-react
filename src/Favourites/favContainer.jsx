@@ -8,7 +8,7 @@ import { DarkModeContext } from "../Dark Mode/darkModeProvider";
 const FavCont = styled.div`
     display: flex;
     padding-inline: 4%;
-    padding-block: 15px;
+    padding-block: 14px;
     flex-direction: column;
     gap: 13px;
     position: fixed;    

@@ -36,8 +36,13 @@ const Text = styled.span`
 
 const Button = ({ icon, text, handleButtons }) => {
     const { darkMode } = useContext(DarkModeContext)
+    let debounceTimeout
     const handleClick = () => {
-        handleButtons()
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(()=>{
+            handleButtons()
+        }, 100)
+        
     }
 
     return (

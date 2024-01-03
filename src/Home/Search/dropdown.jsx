@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { DarkModeContext } from "../../Dark Mode/darkModeProvider";
+import { useContext } from "react";
 
 const ListBy = styled.span`
     font-size: 12px;
@@ -16,10 +17,14 @@ const StyledDrop = styled.div`
     background-color: transparent;
     border: 0;
     height: 100%;
-    border-top: solid 1px var(--lines-color);
+    ${({ $dark }) => $dark && `
+    color: var(--bg-body);
+    background-color: #1A1A1A;
+    box-shadow: inset 0 0 0 1px #1A1A1A;; 
+`};
 
     @media(min-width: 768px) {
-            border-left: solid 1px var(--lines-color);
+        border-left: ${({ $dark }) => $dark ? `solid 1px black` : `solid 1px var(--lines-color)`};
         
     }
     
@@ -29,23 +34,29 @@ const StyledDrop = styled.div`
 const StyledSelect = styled.select`
     border: 0 !important; 
     outline: none !important; ;
-    box-shadow: inset 0 0 0 5px #fff !important; 
+    box-shadow: inset 0 0 0 5px #fff; 
     font-weight: 700;
     font-size: 14px;
+    ${({ $dark }) => $dark && `
+    color: var(--bg-body);
+    background-color: #1A1A1A;
+    box-shadow: inset 0 0 0 5px #1A1A1A; 
+`};
 
+    
 `
 
 const DropDown = ({ title, options, handleDropDownChange }) => {
-
+    const { darkMode } = useContext(DarkModeContext)
     const handleChange = (event) => {
 
         handleDropDownChange(event.target.value)
     }
 
     return (
-        <StyledDrop>
+        <StyledDrop $dark={darkMode}>
             <ListBy>{title}:</ListBy>
-            <StyledSelect onChange={handleChange} id={title}>
+            <StyledSelect $dark={darkMode} onChange={handleChange} id={title}>
                 {options?.map(option => (
                     <option key={option} value={option}>{option}</option>
                 ))}
