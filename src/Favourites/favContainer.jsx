@@ -37,7 +37,7 @@ const FavContainer = ({ favourites }) => {
             <Title>My Favourite Topics</Title>
             <CardFlex>
                 {favourites?.map(fav => (
-                    <Link key={fav.id} to={ "/TopicsReact/details/" + fav.id }>
+                    <Link key={fav.id} to={ "/Khaled-Libdeh-project-react/details/" + fav.id }>
                         <FavouriteCard key={fav.topic} title={fav.topic} imgPath={path + fav.image} rating={fav.rating} />
                     </Link>
                 ))}

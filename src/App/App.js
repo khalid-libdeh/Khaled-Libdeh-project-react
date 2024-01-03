@@ -17,7 +17,7 @@ function App() {
         <Favourites>
           <BrowserRouter>
           <Routes>
-            <Route path="/TopicsReact" element={<Layout />}>
+            <Route path="/Khaled-Libdeh-project-react" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="details/:id" element={<Details />} />
             </Route>
