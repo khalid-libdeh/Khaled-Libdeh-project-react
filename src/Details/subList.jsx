@@ -2,8 +2,7 @@ import { IonIcon } from "@ionic/react";
 import { checkmarkCircleOutline } from 'ionicons/icons';
 import styled from "styled-components";
 import { sortTopics } from "../Scripts/sort";
-import { DarkModeContext } from "../Dark Mode/darkModeProvider";
-import { useContext } from "react";
+import { useDarkMode } from "../Dark Mode/darkModeProvider";
 
 const SubListContainer = styled.div`
     display: flex;
@@ -83,7 +82,7 @@ const CheckIcon = styled(IonIcon)`
 
 
 const SubList = ({ title, listItems }) => {
-    const {darkMode} = useContext(DarkModeContext)
+    const {darkMode} = useDarkMode()
     return (
         <SubListContainer $dark={darkMode}>
             <SubListDiv $dark={darkMode}>

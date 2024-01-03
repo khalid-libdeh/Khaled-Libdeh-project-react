@@ -4,10 +4,9 @@ import { IonIcon } from '@ionic/react';
 import { moonOutline, heartOutline } from 'ionicons/icons';
 import Container from "../Containers/container";
 import Welcome from "./Components/welcome";
-import { useContext } from "react";
-import { ToggleFavContext } from "./layout";
+import { useToggleFav } from "./layout";
 import { Link } from "react-router-dom";
-import { DarkModeContext } from "../Dark Mode/darkModeProvider";
+import { useDarkMode } from "../Dark Mode/darkModeProvider";
 
 const FlexHeader = styled(Container)`
     display: flex;
@@ -33,14 +32,13 @@ const StyledHeader = styled.header`
         background-color: #1A1A1A;
         color: white;
     `};
-  
     
 `
 
 const Header = ({ title, titleColor }) => {
 
-    const [show, setShow] = useContext(ToggleFavContext)
-    const { darkMode, toggleDarkMode } = useContext(DarkModeContext)
+    const [show, setShow] = useToggleFav()
+    const { darkMode, toggleDarkMode } = useDarkMode()
 
     const toggleFav = () => {
         setShow(!show)

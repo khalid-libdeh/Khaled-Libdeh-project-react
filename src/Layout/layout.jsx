@@ -26,4 +26,8 @@ const Layout = () => {
     )
 }
 
+export const useToggleFav = () =>{
+    return useContext(ToggleFavContext)
+}
+
 export default Layout

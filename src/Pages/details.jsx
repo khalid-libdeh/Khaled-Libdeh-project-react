@@ -8,7 +8,7 @@ import DetailsContainer from "../Containers/detailsContainer";
 import FavCard from "../Details/favCard";
 import { Link } from "react-router-dom";
 import { FavContext } from "../Favourites/favourites";
-import { DarkModeContext } from "../Dark Mode/darkModeProvider";
+import { useDarkMode } from "../Dark Mode/darkModeProvider";
 
 const MainContainer = styled.main`
     display: flex;
@@ -24,7 +24,7 @@ const Details = ({}) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
     const [topic, setTopic] = useState(null)
     const [favourites, setFavourites] = useContext(FavContext)
-    const {darkMode} = useContext(DarkModeContext)
+    const {darkMode} = useDarkMode()
 
     useEffect(() => {
         fetchTopic(id).then(res => {

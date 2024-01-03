@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { IonIcon } from '@ionic/react';
-import { DarkModeContext } from "../../Dark Mode/darkModeProvider";
-import { useContext } from "react";
+import { useDarkMode } from "../../Dark Mode/darkModeProvider";
 
 const StyledButton = styled.button`
     display: flex;
@@ -35,7 +34,7 @@ const Text = styled.span`
 `
 
 const Button = ({ icon, text, handleButtons }) => {
-    const { darkMode } = useContext(DarkModeContext)
+    const { darkMode } = useDarkMode()
     let debounceTimeout
     const handleClick = () => {
         clearTimeout(debounceTimeout);

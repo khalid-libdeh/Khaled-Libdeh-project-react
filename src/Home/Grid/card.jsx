@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import FiveStarsRating from "../../Favourites/starsRating";
-import { DarkModeContext } from "../../Dark Mode/darkModeProvider";
-import { useContext } from "react";
+import { useDarkMode } from "../../Dark Mode/darkModeProvider";
 
 const StyledImage = styled.img`
     width: 100%;
@@ -69,7 +68,7 @@ const Padding = styled.div`
     gap: 15px;
 `
 let Card = ({ imgPath, category, title, rating, author }) => {
-    const { darkMode } = useContext(DarkModeContext)
+    const { darkMode } = useDarkMode()
 
     return (
         <StyledCard $dark={darkMode}>

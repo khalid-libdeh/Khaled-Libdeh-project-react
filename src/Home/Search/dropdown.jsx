@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { DarkModeContext } from "../../Dark Mode/darkModeProvider";
-import { useContext } from "react";
+import { useDarkMode } from "../../Dark Mode/darkModeProvider";
+
 
 const ListBy = styled.span`
     font-size: 12px;
@@ -47,7 +47,7 @@ const StyledSelect = styled.select`
 `
 
 const DropDown = ({ title, options, handleDropDownChange }) => {
-    const { darkMode } = useContext(DarkModeContext)
+    const { darkMode } = useDarkMode()
     const handleChange = (event) => {
 
         handleDropDownChange(event.target.value)

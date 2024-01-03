@@ -7,7 +7,7 @@ import SearchBar from "../Home/Search/searchBar";
 import Container from "../Containers/container";
 import styled from "styled-components";
 import { sortArrayByString, sortTopics } from "../Scripts/sort";
-import { DarkModeContext } from "../Dark Mode/darkModeProvider";
+import { useDarkMode } from "../Dark Mode/darkModeProvider";
 
 const MainContainer = styled(Container)`
     padding-top: 18px;
@@ -35,7 +35,7 @@ function Home() {
     const [searchVal, setSearchVal] = useState('');
     const [sort, setSort] = useState('Default')
     const [filter, setFilter] = useState("Default")
-    const { darkMode } = useContext(DarkModeContext)
+    const { darkMode } = useDarkMode()
     useEffect(() => {
         setLoading(true)
         fetchTopics(searchVal).then((res) => {
@@ -47,7 +47,6 @@ function Home() {
             setLoading(false)
         })
     }, [searchVal]);
-
 
     useEffect(() => {
         if (filter === "Default")
@@ -64,8 +63,10 @@ function Home() {
         <div>
             <MainContainer $dark={darkMode}>
                 <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal} updateSort={setSort} updateFilter={setFilter} />
-                <SearchResult>"{topics? filteredTopics.length : null}" Topics Found</SearchResult>
-                {loading ? <Loading /> : <CardsGrid topics={filteredTopics} />}
+                {loading || !filteredTopics? <Loading /> : <div>
+                    <SearchResult>"{filteredTopics.length}" Topics Found</SearchResult>
+                    <CardsGrid topics={filteredTopics} />
+                </div>}
             </MainContainer>
         </div>
     )

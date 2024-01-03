@@ -3,7 +3,7 @@ import CardFlex from "./cardFlex";
 import FavouriteCard from "./favouriteCard";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { DarkModeContext } from "../Dark Mode/darkModeProvider";
+import { useDarkMode } from "../Dark Mode/darkModeProvider";
 
 const FavCont = styled.div`
     display: flex;
@@ -31,7 +31,7 @@ const Title = styled.span`
 
 const FavContainer = ({ favourites }) => {
     const path = process.env.PUBLIC_URL + "/Logos/"
-    const { darkMode } = useContext(DarkModeContext)
+    const { darkMode } = useDarkMode()
     return (
         <FavCont $dark={darkMode}>
             <Title>My Favourite Topics</Title>
