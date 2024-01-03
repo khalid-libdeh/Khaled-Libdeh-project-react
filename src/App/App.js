@@ -2,7 +2,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  HashRouter,
+  HashRouter
 } from "react-router-dom";
 import Home from '../Pages/home'
 import Details from "../Pages/details";
