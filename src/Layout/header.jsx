@@ -51,7 +51,7 @@ const Header = ({ title, titleColor }) => {
     return (
         <StyledHeader $dark={darkMode}>
             <FlexHeader>
-                <Title to={{ pathname: "/" }} style={{ color: titleColor }}>{title}</Title>
+                <Title to={{ pathname: "/TopicsReact" }} style={{ color: titleColor }}>{title}</Title>
                 <ButtonsCont>
                     <Button icon={moonOutline} text="Dark Mode" handleButtons={toggleDark} />
                     <Button key="fav" onClick icon={heartOutline} text="Favourites" handleButtons={toggleFav}>
