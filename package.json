@@ -1,6 +1,6 @@
 {
-  "homepage": "https://khalid-libdeh.io/TopicsReact",
-  "name": "my-react-project",
+  "homepage": "https://khalid-libdeh.io/",
+  "name": "topics-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
