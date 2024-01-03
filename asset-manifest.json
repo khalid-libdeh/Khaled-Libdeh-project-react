@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/TopicsReact/static/css/main.0d0d6358.css",
-    "main.js": "/TopicsReact/static/js/main.c7f6c9df.js",
-    "static/js/738.bba06a48.chunk.js": "/TopicsReact/static/js/738.bba06a48.chunk.js",
-    "static/js/466.1a240e6f.chunk.js": "/TopicsReact/static/js/466.1a240e6f.chunk.js",
-    "static/js/372.13ac3c24.chunk.js": "/TopicsReact/static/js/372.13ac3c24.chunk.js",
-    "static/js/856.9c8c738a.chunk.js": "/TopicsReact/static/js/856.9c8c738a.chunk.js",
-    "static/js/787.10860693.chunk.js": "/TopicsReact/static/js/787.10860693.chunk.js",
-    "index.html": "/TopicsReact/index.html",
-    "main.0d0d6358.css.map": "/TopicsReact/static/css/main.0d0d6358.css.map",
-    "main.c7f6c9df.js.map": "/TopicsReact/static/js/main.c7f6c9df.js.map",
-    "738.bba06a48.chunk.js.map": "/TopicsReact/static/js/738.bba06a48.chunk.js.map",
-    "466.1a240e6f.chunk.js.map": "/TopicsReact/static/js/466.1a240e6f.chunk.js.map",
-    "372.13ac3c24.chunk.js.map": "/TopicsReact/static/js/372.13ac3c24.chunk.js.map",
-    "856.9c8c738a.chunk.js.map": "/TopicsReact/static/js/856.9c8c738a.chunk.js.map",
-    "787.10860693.chunk.js.map": "/TopicsReact/static/js/787.10860693.chunk.js.map"
+    "main.css": "/Khaled-Libdeh-project-react/static/css/main.0d0d6358.css",
+    "main.js": "/Khaled-Libdeh-project-react/static/js/main.865cab6e.js",
+    "static/js/738.bba06a48.chunk.js": "/Khaled-Libdeh-project-react/static/js/738.bba06a48.chunk.js",
+    "static/js/466.1a240e6f.chunk.js": "/Khaled-Libdeh-project-react/static/js/466.1a240e6f.chunk.js",
+    "static/js/372.13ac3c24.chunk.js": "/Khaled-Libdeh-project-react/static/js/372.13ac3c24.chunk.js",
+    "static/js/856.9c8c738a.chunk.js": "/Khaled-Libdeh-project-react/static/js/856.9c8c738a.chunk.js",
+    "static/js/787.10860693.chunk.js": "/Khaled-Libdeh-project-react/static/js/787.10860693.chunk.js",
+    "index.html": "/Khaled-Libdeh-project-react/index.html",
+    "main.0d0d6358.css.map": "/Khaled-Libdeh-project-react/static/css/main.0d0d6358.css.map",
+    "main.865cab6e.js.map": "/Khaled-Libdeh-project-react/static/js/main.865cab6e.js.map",
+    "738.bba06a48.chunk.js.map": "/Khaled-Libdeh-project-react/static/js/738.bba06a48.chunk.js.map",
+    "466.1a240e6f.chunk.js.map": "/Khaled-Libdeh-project-react/static/js/466.1a240e6f.chunk.js.map",
+    "372.13ac3c24.chunk.js.map": "/Khaled-Libdeh-project-react/static/js/372.13ac3c24.chunk.js.map",
+    "856.9c8c738a.chunk.js.map": "/Khaled-Libdeh-project-react/static/js/856.9c8c738a.chunk.js.map",
+    "787.10860693.chunk.js.map": "/Khaled-Libdeh-project-react/static/js/787.10860693.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d0d6358.css",
-    "static/js/main.c7f6c9df.js"
+    "static/js/main.865cab6e.js"
   ]
 }
