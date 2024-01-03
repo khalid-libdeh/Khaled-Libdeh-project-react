@@ -11,7 +11,7 @@ import { DarkModeContext } from "../Dark Mode/darkModeProvider";
 
 const MainContainer = styled(Container)`
     padding-top: 18px;
-    background-color: ${({ $dark }) => $dark ? `var(--body-text)` : `white`};
+    background-color: ${({ $dark }) => $dark ? `#282828;` : `white`};
 
     
 `

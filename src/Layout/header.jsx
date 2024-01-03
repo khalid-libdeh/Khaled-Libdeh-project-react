@@ -30,7 +30,7 @@ const StyledHeader = styled.header`
     background-color: white;
     color: black;
     ${({ $dark }) => $dark && `
-        background-color: black;
+        background-color: #1A1A1A;
         color: white;
     `};
   

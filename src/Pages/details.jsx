@@ -15,7 +15,7 @@ const MainContainer = styled.main`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    background-color: ${({ $dark }) => $dark ? `#282828` : `transparent`};
+    background-color: ${({ $dark }) => $dark ? `var(--body-text)` : `transparent`};
 
 `
 

@@ -15,9 +15,8 @@ const SubListContainer = styled.div`
     padding-top: 30px;
     padding-inline: 5%;
     @media (min-width: 1024px)
-    {
-            
-            padding-inline: 17.4rem;
+    {  
+        padding-inline: 17.4rem;
     }
     ${({ $dark }) => $dark && `
     background-color: #282828;
