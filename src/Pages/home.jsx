@@ -11,10 +11,19 @@ import { DarkModeContext } from "../Dark Mode/darkModeProvider";
 
 const MainContainer = styled(Container)`
     padding-top: 18px;
-    background-color: ${({ $dark }) => $dark ? `#282828;` : `white`};
-
+    ${({ $dark }) => $dark && `
+    color: var(--bg-body);
+    background-color: #282828;
+`};
     
 `
+
+const SearchResult = styled.div`
+    font-weight: 700;
+    font-size: 20px;
+    margin-block: 20px;
+`
+
 let sortOptions = ["Default", "Topic Title", "Author Name"]
 let filterOptions = ["Default", "Web Development Languages", "Frontend Frameworks and Libraries", "Backend Frameworks and Libraries", "Databases and APIs", "Web Development Concepts and Technologies"]
 
@@ -27,7 +36,6 @@ function Home() {
     const [sort, setSort] = useState('Default')
     const [filter, setFilter] = useState("Default")
     const { darkMode } = useContext(DarkModeContext)
-
     useEffect(() => {
         setLoading(true)
         fetchTopics(searchVal).then((res) => {
@@ -56,6 +64,7 @@ function Home() {
         <div>
             <MainContainer $dark={darkMode}>
                 <SearchBar sortOptions={sortOptions} filterOptions={filterOptions} updateSearchVal={setSearchVal} updateSort={setSort} updateFilter={setFilter} />
+                <SearchResult>"{topics? filteredTopics.length : null}" Topics Found</SearchResult>
                 {loading ? <Loading /> : <CardsGrid topics={filteredTopics} />}
             </MainContainer>
         </div>

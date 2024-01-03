@@ -8,7 +8,6 @@ const Grid = styled.div`
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 30px;
-    margin-top: 30px;
     
 `
 const StyledLink = styled(Link)`
