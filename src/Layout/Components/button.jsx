@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { IonIcon } from '@ionic/react';
+import { DarkModeContext } from "../../Dark Mode/darkModeProvider";
+import { useContext } from "react";
 
 const StyledButton = styled.button`
     display: flex;
@@ -13,6 +15,9 @@ const StyledButton = styled.button`
     width: 6.8rem;
     font-size: 0.9rem;
     cursor: pointer;
+    ${({ $dark }) => $dark && `
+    color: white;
+`};
     @media (max-width: 600px){
         width: 3rem;
    }
@@ -30,13 +35,13 @@ const Text = styled.span`
 `
 
 const Button = ({ icon, text, handleButtons }) => {
-    
-    const handleClick = () =>{
+    const { darkMode } = useContext(DarkModeContext)
+    const handleClick = () => {
         handleButtons()
     }
 
     return (
-        <StyledButton onClick={handleClick}>
+        <StyledButton $dark={darkMode} onClick={handleClick}>
             <StyledIcon icon={icon} />
             <Text>{text}</Text>
         </StyledButton>

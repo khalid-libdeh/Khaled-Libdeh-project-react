@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Button from "./Components/button";
 import { IonIcon } from '@ionic/react';
 import { moonOutline, heartOutline } from 'ionicons/icons';
@@ -7,6 +7,7 @@ import Welcome from "./Components/welcome";
 import { useContext } from "react";
 import { ToggleFavContext } from "./layout";
 import { Link } from "react-router-dom";
+import { DarkModeContext } from "../Dark Mode/darkModeProvider";
 
 const FlexHeader = styled(Container)`
     display: flex;
@@ -26,27 +27,35 @@ const Title = styled(Link)`
     font-weight: 700;
 `
 const StyledHeader = styled.header`
-    background-color: var(--bg-default);
+    background-color: white;
+    color: black;
+    ${({ $dark }) => $dark && `
+        background-color: black;
+        color: white;
+    `};
+  
+    
 `
 
 const Header = ({ title, titleColor }) => {
 
     const [show, setShow] = useContext(ToggleFavContext)
+    const { darkMode, toggleDarkMode } = useContext(DarkModeContext)
 
-    const toggleFav = () =>{
+    const toggleFav = () => {
         setShow(!show)
     }
 
     const toggleDark = () => {
-        console.log("dark")
+        toggleDarkMode()
     }
 
     return (
-        <StyledHeader>
+        <StyledHeader $dark={darkMode}>
             <FlexHeader>
-                <Title to={{pathname:"/"}} style={{ color: titleColor }}>{title}</Title>
+                <Title to={{ pathname: "/" }} style={{ color: titleColor }}>{title}</Title>
                 <ButtonsCont>
-                    <Button icon={moonOutline} text="Dark Mode" handleButtons={toggleDark}/>
+                    <Button icon={moonOutline} text="Dark Mode" handleButtons={toggleDark} />
                     <Button key="fav" onClick icon={heartOutline} text="Favourites" handleButtons={toggleFav}>
                     </Button>
                 </ButtonsCont>
