@@ -25,7 +25,7 @@ const CardsGrid = ({ topics }) => {
 
         <Grid>
             {topics?.map(topic => (
-                <StyledLink key={topic.id} to={{pathname:"/Khaled-Libdeh-project-react/details/"+ topic.id}}>
+                <StyledLink key={topic.id} to={{pathname:"details/"+ topic.id}}>
                     <Card key={topic.id} imgPath={path + topic.image} title={topic.topic} category={topic.category} author={topic.name} rating={topic.rating} />
                 </StyledLink>
             ))}
