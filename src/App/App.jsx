@@ -13,7 +13,7 @@ import DarkModeProvider from "../Dark Mode/darkModeProvider";
 function App() {
   return (
 
-      <HashRouter>
+      
         <DarkModeProvider>
           <Favourites>
             <Routes>
@@ -24,7 +24,7 @@ function App() {
             </Routes>
           </Favourites>
         </DarkModeProvider>
-        </HashRouter>
+  
 
     
 
